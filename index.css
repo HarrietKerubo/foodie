@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: 'Smythe', system-ui;
+    font-weight: 400;
+} 
+
+
+.container {
+    width: 600px;
+    border: solid green 2px;
+}
+
+.header{
+    background-image: url("./images/bug.jpg");
+    background-size: auto;
+    background-repeat: no-repeat; 
+    background-position: center center;
+    color: #ffffff;
+    padding: 46px;
+  
+}
+
+.header-text h1{
+   
+    font-size: 39px;
+    line-height: 24px;
+
+}
+
+.header-text h2{
+  
+    font-size: 22px;
+    line-height: 14px;
+
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+}
