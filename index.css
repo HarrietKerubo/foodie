@@ -38,3 +38,50 @@ h1 {
     margin: 0px;
     padding: 0px;
 }
+
+.item-display{
+    padding: 67px 46px;
+   
+}
+
+.item{
+    display: flex;
+    gap: 33px;
+    padding-bottom: 51px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid #D2D2D2;  
+   
+}
+
+.item-graphic{
+    width: 70px;
+    height: 89px;
+    opacity: 0.72px;
+    font-size: 79px;
+    line-height: 98px;
+    letter-spacing: -0.02em;  
+    font-family: 'Inter', sans-serif;
+  
+
+    }
+
+
+.add-btn{
+    border: 1.5px solid #DEDEDE;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 45px; 
+    text-align: center;
+    color: #3C3C3C;
+    margin-left: 260px;
+
+    
+}
+
+hr{
+    border: 1px solid #D2D2D2;
+}
