@@ -2,12 +2,15 @@ body {
     margin: 0;
     font-family: 'Smythe', system-ui;
     font-weight: 400;
+    /* height: 1161px; */
+    position: relative;
 } 
 
 
 .container {
     width: 600px;
-    border: solid green 2px;
+    margin: 0 auto;
+   
 }
 
 .header{
@@ -27,7 +30,7 @@ body {
 
 }
 
-.header-text h2{
+.header-text h3{
   
     font-size: 22px;
     line-height: 14px;
@@ -40,7 +43,7 @@ h1 {
 }
 
 .item-display{
-    padding: 67px 46px;
+    padding: 67px 46px 0px 46px;
    
 }
 
@@ -48,8 +51,8 @@ h1 {
     display: flex;
     gap: 33px;
     padding-bottom: 51px;
-    margin-bottom: 45px;
     border-bottom: 1px solid #D2D2D2;  
+    margin-bottom: 45px;
    
 }
 
@@ -61,10 +64,10 @@ h1 {
     line-height: 98px;
     letter-spacing: -0.02em;  
     font-family: 'Inter', sans-serif;
-  
-
-    }
-
+      }
+.item-description{
+    padding-right: 225px;
+}
 
 .add-btn{
     border: 1.5px solid #DEDEDE;
@@ -77,11 +80,145 @@ h1 {
     line-height: 45px; 
     text-align: center;
     color: #3C3C3C;
-    margin-left: 260px;
-
     
 }
 
-hr{
-    border: 1px solid #D2D2D2;
+.checkout-section{
+    margin: 0px 46px 53px 46px;
+       
+  }
+
+.checkout-group{
+    border-bottom: 2px solid #393333;
+    padding-bottom: 30px;
+    padding-top: 64px;
+}
+
+.checkout-section h2{
+    text-align: center;
+}
+
+
+h2 {
+    font-size: 28px;
+    line-height: 17px;
+    color: #000000;
+   }
+
+.checkout-items-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.checkout-details{
+    display: flex;
+}
+
+.checkout-item{
+    text-align: left;
+    font-size: 28px;
+    line-height: 17px;
+    color: #000000;
+    
+}
+.delete{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 3px;
+    color: #BBBBBB;
+}
+
+.price{
+    
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+
+
+}
+
+.totals{
+    display: flex;
+    justify-content: space-between;
+    font-size: 28px;
+    line-height: 24px;
+    margin-bottom: 53px;
+}
+
+#total-amount{
+   
+    font-size: 20px;
+}
+
+.purchase-btn{
+    color: #ffffff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    background: #16DB99;
+    border-radius: 3px;
+    padding: 18px 174px;
+    box-shadow: 0px 1px 2px 0px #0000000D;
+
+}
+
+.payment-modal{
+    display: none;
+    position: absolute;
+    top: 326px;
+    bottom: 326px;
+    left: 38px;
+    right: 38px;
+    margin: auto;
+    width: 524px;
+    height: 542px;
+    padding-top: 47px;
+    border-radius: 3.89px;
+    border: 1.3px solid #757575;
+    box-shadow: 5.186544418334961px 5.186544418334961px 255.43731689453125px 0px #00000080;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    background: #ffffff;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    margin: 46px 24px 30px 24px;
+    
+}
+
+input{
+    border: 1.3px solid #757575;
+    border-radius: 4px;
+    color: #757575;
+    height: 71px;
+    padding-left: 27px;
+    font-size: 20px;
+    line-height: 31px;
+    text-align: left;
+
+}
+.btn{
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 31px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #16DB99;
+    margin-top: 46px;
+    border: none;
+    border-radius: 4px;
+    height: 71px;
+
 }
