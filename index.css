@@ -65,9 +65,6 @@ h1 {
     letter-spacing: -0.02em;  
     font-family: 'Inter', sans-serif;
       }
-.item-description{
-    padding-right: 225px;
-}
 
 .add-btn{
     border: 1.5px solid #DEDEDE;
@@ -80,10 +77,12 @@ h1 {
     line-height: 45px; 
     text-align: center;
     color: #3C3C3C;
+    margin-left: auto;
     
 }
 
 .checkout-section{
+    display: none;
     margin: 0px 46px 53px 46px;
        
   }
