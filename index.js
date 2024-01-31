@@ -31,7 +31,7 @@ function displayMenuItems() {
 }
 
 let orderArray = [];
-
+let cartItems = [];
 function addToCart(itemId) {
   document.querySelector(".checkout-section").style.display = "block";
 
@@ -39,31 +39,60 @@ function addToCart(itemId) {
     return menuItem.id == itemId;
   })[0];
 
-  orderArray.push(food.price);
-
-  checkOuts.innerHTML += `
-  <div class="checkout-items-container">
-  <div class="checkout-details">
-    <div class="checkout-item">
-      ${food.name}
-    </div>
-    <div class="delete"> remove </div>
-    
-  </div>
-  <div class="cost"> ${food.price} </div>  
-</div>
-  `;
-
-  const totalPrice = orderArray.reduce((total, currentPrice) => {
-    return total + currentPrice;
+  cartItems.push({
+    id: food.id,
+    name: food.name,
+    price: food.price,
   });
 
+  updateCartDisplay();
+}
+
+function updateCartDisplay() {
+  let checkOutData = ``;
+  let totalPrice = 0;
+  cartItems.forEach(function (item) {
+    checkOutData += `
+      <div class="checkout-items-container">
+      <div class="checkout-details" id="checkout-${item.id}">
+        <div class="checkout-item">
+          ${item.name}
+        </div>
+        <div class="delete" data-remove="checkout-${item.id}"> remove </div>
+    
+      </div>
+      <div class="cost"> ${item.price} </div>
+    </div>
+      `;
+
+    totalPrice += item.price;
+  });
+
+  checkOuts.innerHTML = checkOutData;
   document.getElementById("total-amount").textContent = totalPrice;
+}
+
+function removeFromCart(itemId) {
+  console.log("remove clicked");
+
+  itemId = parseInt(itemId.substring("checkout-".length));
+
+  const clickedItem = cartItems.filter(function (foodItem) {
+    return foodItem.id == itemId;
+  });
+
+  cartItems = cartItems.filter(function (elementsInCart) {
+    return elementsInCart !== clickedItem[0];
+  });
+
+  updateCartDisplay();
 }
 
 document.addEventListener("click", function (e) {
   if (e.target.dataset.id) {
     addToCart(e.target.dataset.id);
+  } else if (e.target.dataset.remove) {
+    removeFromCart(e.target.dataset.remove);
   }
 });
 
