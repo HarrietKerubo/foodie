@@ -2,6 +2,7 @@ import { menuArray } from "./data.js";
 
 const itemDisplay = document.querySelector(".item-display");
 const checkOuts = document.querySelector(".checkout-group");
+const paymentModal = document.querySelector(".payment-modal");
 
 let menuItemsHtml = ``;
 function displayMenuItems() {
@@ -88,11 +89,17 @@ function removeFromCart(itemId) {
   updateCartDisplay();
 }
 
+function checkOut() {
+  paymentModal.style.display = "block";
+}
+
 document.addEventListener("click", function (e) {
   if (e.target.dataset.id) {
     addToCart(e.target.dataset.id);
   } else if (e.target.dataset.remove) {
     removeFromCart(e.target.dataset.remove);
+  } else if (e.target.dataset.purchase) {
+    checkOut();
   }
 });
 
