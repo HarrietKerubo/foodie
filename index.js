@@ -32,6 +32,16 @@ function displayMenuItems() {
   itemDisplay.innerHTML = menuItemsHtml;
 }
 
+document.addEventListener("click", function (e) {
+  if (e.target.dataset.id) {
+    addToCart(e.target.dataset.id);
+  } else if (e.target.dataset.remove) {
+    removeFromCart(e.target.dataset.remove);
+  } else if (e.target.dataset.purchase) {
+    checkOut();
+  }
+});
+
 let cartItems = [];
 function addToCart(itemId) {
   document.querySelector(".checkout-section").style.display = "block";
@@ -95,23 +105,12 @@ function checkOut() {
     e.preventDefault();
     const paymentFormData = new FormData(paymentForm);
     const customerName = paymentFormData.get("customerName");
+    const confirmationNote = document.getElementById("confirmation-note");
     paymentModal.style.display = "none";
     document.querySelector(".checkout-section").style.display = "none";
-    document.getElementById("confirmation-note").style.display = "block";
-    document.getElementById(
-      "confirmation-note"
-    ).innerHTML = `<p> Thanks, ${customerName}! Your order is on its way! </p>`;
+    confirmationNote.style.display = "block";
+    confirmationNote.innerHTML = `<p> Thanks, ${customerName}! Your order is on its way! </p>`;
   });
 }
-
-document.addEventListener("click", function (e) {
-  if (e.target.dataset.id) {
-    addToCart(e.target.dataset.id);
-  } else if (e.target.dataset.remove) {
-    removeFromCart(e.target.dataset.remove);
-  } else if (e.target.dataset.purchase) {
-    checkOut();
-  }
-});
 
 displayMenuItems();
