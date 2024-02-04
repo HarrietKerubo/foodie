@@ -3,6 +3,7 @@ import { menuArray } from "./data.js";
 const itemDisplay = document.querySelector(".item-display");
 const checkOuts = document.querySelector(".checkout-group");
 const paymentModal = document.querySelector(".payment-modal");
+const paymentForm = document.getElementById("payment-form");
 
 let menuItemsHtml = ``;
 function displayMenuItems() {
@@ -31,7 +32,6 @@ function displayMenuItems() {
   itemDisplay.innerHTML = menuItemsHtml;
 }
 
-let orderArray = [];
 let cartItems = [];
 function addToCart(itemId) {
   document.querySelector(".checkout-section").style.display = "block";
@@ -91,6 +91,17 @@ function removeFromCart(itemId) {
 
 function checkOut() {
   paymentModal.style.display = "block";
+  paymentForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const paymentFormData = new FormData(paymentForm);
+    const customerName = paymentFormData.get("customerName");
+    paymentModal.style.display = "none";
+    document.querySelector(".checkout-section").style.display = "none";
+    document.getElementById("confirmation-note").style.display = "block";
+    document.getElementById(
+      "confirmation-note"
+    ).innerHTML = `<p> Thanks, ${customerName}! Your order is on its way! </p>`;
+  });
 }
 
 document.addEventListener("click", function (e) {
